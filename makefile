@@ -1,6 +1,6 @@
-all: data.dat grafica.png
+all: data.dat movie.png
 
-%.png: %.dat grafica.png
+%.png: %.dat movie.png
 	python3 graficar.py
 	
 %.dat: a.out
