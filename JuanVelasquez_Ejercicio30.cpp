@@ -30,7 +30,10 @@ int main(){
     
     while(t < tmax){
         for(i = 1; i < N-1; i++){
-            U_new[i] = (1.0-beta*beta)*U_old[i] - (0.5*beta)*(1-beta)*U_old[i+1] + (0.5*beta)*(1+beta)*U_old[i-1]; 
+            U_new[i] = (1.0-beta*beta)*U_old[i] - (0.5*beta)*(1-beta)*U_old[i+1] + (0.5*beta)*(1+beta)*U_old[i-1];
+            U_new[0] = 0.0;
+            U_new[N-1] = 0.0;
+            
         }
         
         for(i = 0; i < N; i++){
