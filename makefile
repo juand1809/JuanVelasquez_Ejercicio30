@@ -1,6 +1,6 @@
-all: data.dat movie.png
+all: data.dat movie.gif
 
-%.png: %.dat movie.png
+%.gif: %.dat movie.gif
 	python3 graficar.py
 	
 %.dat: a.out
@@ -10,4 +10,4 @@ a.out: JuanVelasquez_Ejercicio30.cpp
 	g++ JuanVelasquez_Ejercicio30.cpp
 
 clean:
-	rm -rf *.x *.dat *.png
+	rm -rf *.x *.dat *.gif

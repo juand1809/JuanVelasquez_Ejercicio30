@@ -11,7 +11,7 @@ int main(){
     double delta_t = 0.01;
     double t = 0.0;
     double tmax = 2.0;
-    double c = 0.8;
+    double c = 1.0;
     double beta = c*delta_t/delta_x;
     int N = X/delta_x + 1;
     double pi = 4*atan(1);
@@ -22,7 +22,7 @@ int main(){
     
     for (i = 0; i < N; i++){
         x = i*delta_x;
-        U_old[i] = 0.05*sin(4*pi*x/X);
+        U_old[i] = 0.05*sin(4.0*pi*x/X);
         U_new[i] = U_old[i];
     }  
     
