@@ -11,7 +11,7 @@ int main(){
     double delta_t = 0.01;
     double t = 0.0;
     double tmax = 2.0;
-    double c = 0.2;
+    double c = 0.8;
     double beta = c*delta_t/delta_x;
     int N = X/delta_x + 1;
     double pi = 4*atan(1);
@@ -22,7 +22,7 @@ int main(){
     
     for (i = 0; i < N; i++){
         x = i*delta_x;
-        U_old[i] = 0.5*sin(4*pi*x/X);
+        U_old[i] = 0.05*sin(4*pi*x/X);
         U_new[i] = U_old[i];
     }  
     
@@ -30,7 +30,7 @@ int main(){
     
     while(t < tmax){
         for(i = 1; i < N-1; i++){
-            U_new[i] = U_old[i] - ((0.25*beta)*(pow(U_old[i+1],2)-pow(U_old[i-1],2))) + ((0.125*pow(beta,2))*((U_old[i+1]+U_old[i])*(pow(U_old[i+1],2)-pow(U_old[i],2))-(U_old[i]+U_old[i-1])*(pow(U_old[i],2)-pow(U_old[i-1],2))));          
+            U_new[i] = U_old[i] - (0.25*beta)*(pow(U_old[i+1],2)-pow(U_old[i-1],2)) + (0.125*pow(beta,2))*((U_old[i+1] + U_old[i])*(pow(U_old[i+1],2) - pow(U_old[i],2)) - (U_old[i] + U_old [i-1])*(pow(U_old[i],2) - pow(U_old[i-1],2)));          
         }
         
         for(i = 0; i < N; i++){
